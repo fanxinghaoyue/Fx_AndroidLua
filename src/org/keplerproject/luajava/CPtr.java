@@ -31,7 +31,7 @@ package org.keplerproject.luajava;
  */
 public class CPtr
 {
-    
+
     /**
      * Compares this <code>CPtr</code> to the specified object.
      *
@@ -41,31 +41,32 @@ public class CPtr
      *		    pointers being pointed to by these objects are also
      *		    equal. Returns false otherwise.
      */
-	public boolean equals(Object other)
-	{
-		if (other == null)
-			return false;
-		if (other == this)
-	    return true;
-		if (CPtr.class != other.getClass())
-	    return false;
-		return peer == ((CPtr)other).peer;
-   }
-
+    public boolean equals(Object other)
+    {
+        if (other == null)
+            return false;
+        if (other == this)
+            return true;
+        if (CPtr.class != other.getClass())
+            return false;
+        return peer == ((CPtr) other).peer;
+    }
 
     /* Pointer value of the real C pointer. Use long to be 64-bit safe. */
     private long peer;
-    
+
     /**
      * Gets the value of the C pointer abstraction
      * @return long
      */
     protected long getPeer()
     {
-    	return peer;
+        return peer;
     }
 
     /* No-args constructor. */
-    CPtr() {}
- 
+    CPtr()
+    {
+    }
+
 }
